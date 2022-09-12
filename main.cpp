@@ -12,6 +12,8 @@ extern "C" {
 #define WIFI_SSID "WIFI NAME"
 #define WIFI_PASSWORD "WIFI PASSWORD"
 
+#define ADDRESS_TO_MEASURE_PING "192.168.123.1"
+
 // Raspberry Pi Mosquitto MQTT Broker
 #define MQTT_HOST IPAddress(192, 168, 123, 16) // ADD YOUR MQTT BROKER HERE 
 // For a cloud MQTT broker, type the domain name
@@ -359,7 +361,7 @@ void loop() {
   }
 
 
-  if (Ping.ping("192.168.123.1")) {
+  if (Ping.ping(ADDRESS_TO_MEASURE_PING)) {
     ping_time = Ping.averageTime();
   } else {
     delay(60000);
